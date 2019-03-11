@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+{% block content %}
+<br>
+<br>
+<table class="table">
+        <thead>
+          <tr>
+            <th scope="col"> No.</th>
+            <th scope="col"> Number Plate</th>
+            <th scope="col">Check In </th>
+            <th scope="col">Check Out </th>
+            <th scope="col">Amount </th>
+  
+          </tr>
+        </thead>
+        {% for i in variable %}
+<tbody>
+    
+        <tr>
+          <th scope="row">{{loop.index}}</th>
+          <td>{{i["data"]["numberplate"]}}</td>
+          <td>{{i["data"]["checkin"]}}</td>
+          <td>{{i["data"]["checkout"]}}</td>
+          <td>{{i["data"]["amount"]}}</td>
+        
+     
+        </tr>
+        
+      </tbody>
+<!--
+	<p> {{i["Username"]}}</p>
+	<p> {{i["Emailid"]}}</p>
+	<p> {{i["phone"]}}</p>
+	<br>
+-->
+
+
+{% endfor %}
+
+
+</table>
+
+{% endblock content %}
